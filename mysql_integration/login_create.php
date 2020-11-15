@@ -1,40 +1,16 @@
-<?php include "db.php";
+<?php
+include "db.php";
+include "functions.php";
 
-if (isset($_POST['submit'])) {
-    global $connection;
+createData();
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $query = "INSERT INTO users(username, password)";
-    $query .= "VALUE ('$username', '$password')";
-
-    $result = mysqli_query($connection, $query);
-
-    if (!$result) {
-        die('Query FAILED' . mysqli_error());
-    }
-}
 ?>
 
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
-
-    <title>Document</title>
-</head>
-<body>
+<?php include "includes/header.php"; ?>
 
 <div class="container">
     <div class="col-sm-6">
+        <h2 class="text-center">Create</h2>
         <form action="login_create.php" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -44,10 +20,11 @@ if (isset($_POST['submit'])) {
                 <label for="password">Password</label>
                 <input type="password" name="password" class="form-control">
             </div>
-            <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+            <input class="btn btn-primary" type="submit" name="submit" value="CREATE">
         </form>
     </div>
 </div>
 
-</body>
-</html>
+<?php include "includes/footer.php"; ?>
+
+
