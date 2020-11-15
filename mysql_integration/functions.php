@@ -8,6 +8,15 @@ include "db.php";
             $username = $_POST['username'];
             $password = $_POST['password'];
 
+            $username = mysqli_real_escape_string($connection, $username);
+            $password = mysqli_real_escape_string($connection, $password);
+
+            //Encrpyting password
+            $hashFormat = "$2y$10$";
+            $salt = "iusesomecrazystrings22";
+            $hash_and_salt = $hashFormat . $salt;
+            $password = crypt($password, $hash_and_salt);
+
             $query = "INSERT INTO users(username, password)";
             $query .= "VALUE ('$username', '$password')";
 
