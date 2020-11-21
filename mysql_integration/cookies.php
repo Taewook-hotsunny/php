@@ -18,5 +18,16 @@ setcookie($name,$value,$expiration);
 </head>
 <body>
 
+<?php
+
+    if(isset($_COOKIE["tw"])) {
+        $someOne = $_COOKIE["tw"];
+        echo $someOne;
+    } else {
+        $someOne = "";
+    }
+
+?>
+
 </body>
 </html>
