@@ -11,7 +11,7 @@ include "db.php";
             $username = mysqli_real_escape_string($connection, $username);
             $password = mysqli_real_escape_string($connection, $password);
 
-            //Encrpyting password
+            //Encrypting password
             $hashFormat = "$2y$10$";
             $salt = "iusesomecrazystrings22";
             $hash_and_salt = $hashFormat . $salt;
@@ -71,8 +71,6 @@ include "db.php";
     function deleteData() {
         if(isset($_POST['submit'])) {
             global $connection;
-            $username = $_POST['username'];
-            $password = $_POST['password'];
             $id = $_POST['id'];
 
             $query = "DELETE FROM users ";
