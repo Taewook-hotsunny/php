@@ -4,7 +4,7 @@ include "functions.php";
 ?>
 
 
-<?php include "includes/header.php"; ?>
+<?php //include "CRUDincludes/header.php"; ?>
 
 <div class="container">
     <div class="col-sm-6">
@@ -15,4 +15,4 @@ include "functions.php";
     </div>
 </div>
 
-<?php include "includes/footer.php"; ?>
+<?php include "CRUD/includes/footer.php"; ?>

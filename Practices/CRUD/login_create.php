@@ -6,7 +6,7 @@ createData();
 
 ?>
 
-<?php include "includes/header.php"; ?>
+<?php include "CRUD/includes/header.php"; ?>
 
 <div class="container">
     <div class="col-sm-6">
@@ -25,6 +25,6 @@ createData();
     </div>
 </div>
 
-<?php include "includes/footer.php"; ?>
+<?php include "CRUD/includes/footer.php"; ?>
 
 
